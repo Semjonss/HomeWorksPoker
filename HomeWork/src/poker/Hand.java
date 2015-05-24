@@ -17,7 +17,7 @@ public class Hand {
 		};
 	private Card[] _hand;	
 	
-	public void TakeCards(Card[] hand){
+	public void takeCards(Card[] hand){
 		if (hand.length == Dealer.MAX_HEND_CARD){
 			_hand = hand;			
 		}else{
@@ -25,7 +25,7 @@ public class Hand {
 		}
 	}
 	
-	public String LearnHand(){
+	public String learnHand(){
 		int[] helpArrOfRank = new int[Card.MAX_RANK + 1];// because ace can you begin the procedure, and to finish it.
 		int flagFlush = -1;
 
@@ -102,7 +102,7 @@ public class Hand {
 		return ÑOMBINATIONS[ñombinationsID];
 	}
 	
-	public void OpenHand(){
+	public void openHand(){
 		for (int i = 0; i < _hand.length; i++) {
 			System.out.print(_hand[i].getCard());
 		}

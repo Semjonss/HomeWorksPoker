@@ -66,8 +66,8 @@ public class TestGame{
 	@Test
 	public void test() {
 		Hand hand = new Hand();
-		hand.TakeCards(Dealer.CheatCard(_i1, _i2, _i3, _i4, _i5));
-		assertEquals(_output, hand.LearnHand());
+		hand.takeCards(Dealer.cheatCard(_i1, _i2, _i3, _i4, _i5));
+		assertEquals(_output, hand.learnHand());
 	}
 
 }

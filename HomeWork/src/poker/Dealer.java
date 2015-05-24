@@ -19,9 +19,9 @@ public class Dealer {
 		_activeDeck = MAX_CARD_COUNT;
 	}
 	
-	public	static Card[] GiveHand(){
+	public	static Card[] giveHand(){
 		Card[] hand = new Card[MAX_HEND_CARD];
-		RefreshDeck();//refresh a deck before to give a new hand
+		refreshDeck();//refresh a deck before to give a new hand
 		for (int i = 0; i < hand.length; i++) {
 			int j = random.nextInt(_activeDeck);
 			hand[i] = new Card(numbersArray[j]);
@@ -30,7 +30,7 @@ public class Dealer {
 		return hand;		
 	}
 	
-	public static Card[] CheatCard(int a1, int a2, int a3, int a4, int a5){
+	public static Card[] cheatCard(int a1, int a2, int a3, int a4, int a5){
 		Card[] hand = new Card[MAX_HEND_CARD];
 		hand[0] = new Card(a1);
 		hand[1] = new Card(a2);
@@ -41,7 +41,7 @@ public class Dealer {
 	}
 	
 	
-	private static void  RefreshDeck() {
+	private static void  refreshDeck() {
 		_activeDeck = MAX_CARD_COUNT;	//it's true, because we're take random namber of card 
 	}
 }

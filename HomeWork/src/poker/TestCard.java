@@ -6,24 +6,16 @@ import org.junit.Test;
 
 public class TestCard {
 
-	@Test
+	@Test(expected = IllegalArgumentException.class)
 	public void negativeConstructorParameter() throws Exception {
-		try {
 			new Card(-1);
-			fail("illigal argument");
-		} catch (IllegalArgumentException iae) {
-			
-		}
 	}
 	
-	@Test
-	public void LageConstructorParameter() throws Exception {
-		try {
-			new Card(52);
-			fail("illigal argument");
-		} catch (IllegalArgumentException iae) {
-			
-		}
+
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void lageConstructorParameter() throws Exception {
+			new Card(-1);
 	}
 	
 	@Test
