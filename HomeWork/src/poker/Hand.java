@@ -3,18 +3,6 @@ package poker;
 public class Hand {
 	
 	private static final int DOWN_FLAG = 4;
-	private static String[] ÑOMBINATIONS = {
-		"High-card",
-		"One-pair",
-		"Two-pair",
-		"Three of a Kind",
-		"Straight",
-		"Flush",
-		"Full House",
-		"Four of a Kind",
-		"Straight Flush",
-		"Royal Flush",
-		};
 	private Card[] _hand;	
 	
 	public void takeCards(Card[] hand){
@@ -32,8 +20,8 @@ public class Hand {
 		int StraightMaxLength = 1;
 		int maxFirstRankID = 1;
 		int maxSecondRankID = 0;
-		int ñombinationsID;
 		int felpBuff = 1;
+		String ñombinationName;
 		
 		
 		//preparation
@@ -79,27 +67,27 @@ public class Hand {
 			}
 		}		
 		if ((StraightMaxLength == 5) && (flagFlush != DOWN_FLAG) && (helpArrOfRank[2] == 0)){
-			ñombinationsID = 9;//Royal Flush
+			ñombinationName = Combination.ROYAL_FLUSH.getName();
 		}else if((StraightMaxLength == 5) && (flagFlush != DOWN_FLAG)){
-			ñombinationsID = 8;//Straight Flush
+			ñombinationName = Combination.STRAIGHT_FLUSH.getName();
 		}else if(flagFlush != DOWN_FLAG){
-			ñombinationsID = 5;//Flush
+			ñombinationName = Combination.FLUSH.getName();
 		}else if(StraightMaxLength == 5){
-			ñombinationsID = 4;//Straight
+			ñombinationName = Combination.STRAIGHT.getName();
 		}else if(helpArrOfRank[maxFirstRankID] == 4){
-			ñombinationsID = 7;//Four of a Kind
+			ñombinationName = Combination.FOUR_OF_A_KIND.getName();
 		}else if((helpArrOfRank[maxFirstRankID] == 3) && (helpArrOfRank[maxSecondRankID] == 2)){
-			ñombinationsID = 6;//Full House
+			ñombinationName = Combination.FULL_HOUSE.getName();
 		}else if(helpArrOfRank[maxFirstRankID] == 3){
-			ñombinationsID = 3;//Three of a Kind
+			ñombinationName = Combination.THREE_OF_A_KIND.getName();
 		}else if((helpArrOfRank[maxFirstRankID] == 2) && (helpArrOfRank[maxSecondRankID] == 2)){
-			ñombinationsID = 2;//Two-pair
+			ñombinationName = Combination.TWO_PAIR.getName();
 		}else if(helpArrOfRank[maxFirstRankID] == 2){
-			ñombinationsID = 1;//One-pair
+			ñombinationName = Combination.ONE_PAIR.getName();
 		}else{
-			ñombinationsID = 0;
+			ñombinationName = Combination.HIGH_CARD.getName();
 		}
-		return ÑOMBINATIONS[ñombinationsID];
+		return ñombinationName;
 	}
 	
 	public void openHand(){
